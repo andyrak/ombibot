@@ -12,21 +12,16 @@ module OmbiBot
     class Request < SlackRubyBot::Commands::Base
       command "movie" do |client, data, match|
         query = URI.escape(match["expression"])
-	
-	puts "DEBUG: #{OMBI_URL}, #{OMBI_API_KEY}, #{query}"
 
-	raw = HTTParty.get(
+	      raw = HTTParty.get(
           "#{OMBI_URL}/api/v1/Search/movie/#{query}",
           {
             headers: {
               "ApiKey" => OMBI_API_KEY,
-	    },
-          }
-        ).body
+            },
+          }).body
 
-	puts raw
-
-	body = JSON.parse(raw)
+	      body = JSON.parse(raw)
 
         build_message = -> {
           {

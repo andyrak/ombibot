@@ -12,8 +12,8 @@ module OmbiBot
 
       command 'request tv <tv show name>' do
         desc 'Requests a show on H8NET.'
-	long_desc 'This will download the full series of\n' \
-		'an anime, cartoon, or other show.'
+	      long_desc 'This will download the full series of\n' \
+		      'an anime, cartoon, or other show.'
       end	
 		
     end
